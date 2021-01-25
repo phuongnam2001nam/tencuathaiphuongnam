@@ -4,12 +4,12 @@ function showUserList(){
 		return false;
 	}
     var accounts = JSON.parse(localStorage.getItem('accounts'));
-	var tr='<tr><th>STT</th><th>HỌ TÊN KH</th><th>TÊN ĐĂNG NHẬP</th><th>Xóa</th></tr>';
+	var tr='<tr><th>STT</th><th>TÀI KHOẢN</th><th>MẬT KHẨU</th><th>XÓA</th></tr>';
 	for(var i=1; i<accounts.length;i++){
 		tr+='<tr>'+
 		'<td>'+i+'</td>'+
-		'<td>'+accounts[i].password+'</td>'+
 		'<td>'+accounts[i].username+'</td>'+
+		'<td>'+accounts[i].password+'</td>'+
 		'<td><button class="delete" onClick="deleteuser(\''+accounts[i].username+'\')">×</button></td></tr>';
 	}
 	document.getElementById('userlist').innerHTML=tr;
